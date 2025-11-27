@@ -3,25 +3,27 @@
 #include <string.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
-struct student
+struct point
 {
-	int ID;
-	char name[20];
-	double grade;
+	int x, y;
 };
-
 void main(void)
 {
-	struct student stud = {10, "yudam", 4.3};
+	struct point p1, p2;
+	int xdiff, ydiff;
+	double dist;
 	
-
-	stud.ID = 17;
-	strcpy(stud.name, "KO");
-	stud.grade = 2.0;
+	printf("input p1 (x y) : ");
+	scanf("%d %d", &p1.x, &p1.y);
 	
-	printf("ID : %i\n", stud.ID);
-	printf("name : %s\n", stud.name);
-	printf("grade : %lf\n", stud.grade);
+	printf("input p2 (x y) : ");
+	scanf("%d %d", &p2.x, &p2.y);
+	
+	xdiff = p1.x - p2.x;
+	ydiff = p1.y - p2.y;
+	dist = sqrt(xdiff*xdiff + ydiff*ydiff);
+	
+	printf("distance : %lf\n", dist);
 	
 	return 0;
 }
